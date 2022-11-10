@@ -1,0 +1,8 @@
+<div class="container mt-3">
+  <h1>Lists</h1>
+  <hr>
+  <% @list.bookmarks.each do |bookmark| %>
+    <p><%= bookmark.movie.title %></p>
+    <hr>
+  <% end %>
+</div>
