@@ -1,8 +1,8 @@
 <div class="container">
-  <h1>Add a genre</h1>
+  <h1>New selection</h1>
   <%= simple_form_for @list do |f| %>
     <%= f.input :name %>
     <%= f.input :photo, as: :file %>
-    <%= f.submit 'Add new genre list' %>
+    <%= f.submit 'Add to selections' %>
   <% end %>
 </div>
