@@ -16,20 +16,20 @@ Movie.create(title: "Titanic", overview: "101-year-old Rose DeWitt Bukater tells
 Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal mastermind, gathers a crew of female thieves to pull off the heist of the century.", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 7.0)
 puts "#{Movie.count} movies created"
 
-url = 'http://tmdb.lewagon.com/movie/top_rated'
-response = JSON.parse(URI.open(url).read)
+# url = 'http://tmdb.lewagon.com/movie/top_rated'
+# response = JSON.parse(URI.open(url).read)
 
-response['results'].each do |movie_hash|
-  puts
-  p movie_hash
-  # create an instance with the hash
-  Movie.create!(
-    poster_url: "https://image.tmdb.org/t/p/w500" + movie_hash['poster_path'],
-    title: movie_hash['title'],
-    overview: movie_hash['overview'],
-    rating: movie_hash['rating']
-  )
-end
+# response['results'].each do |movie_hash|
+#   puts
+#   p movie_hash
+#   # create an instance with the hash
+#   Movie.create!(
+#     poster_url: "https://image.tmdb.org/t/p/w500" + movie_hash['poster_path'],
+#     title: movie_hash['title'],
+#     overview: movie_hash['overview'],
+#     rating: movie_hash['rating']
+#   )
+# end
 
 puts 'destroying list...'
 List.destroy_all
@@ -39,7 +39,5 @@ List.create(name: "Action")
 List.create(name: "Fiction")
 List.create(name: "Drama")
 puts "#{List.count} lists created"
-
-
 
 # the Le Wagon copy of the API
