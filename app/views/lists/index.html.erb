@@ -1,8 +1,11 @@
-<div class="container">
-  <h1>Lists</h1>
+<div class="container m-3">
+  <h1>Selection</h1>
   <hr>
   <% @lists.each do |list| %>
-    <p><%= link_to list.name, list_path(list) %></p>
-    <hr>
-  <% end %>
+    <div class="cards">
+      <%= link_to list_path(list) do %>
+        <%= render 'card', list: list %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
